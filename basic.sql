@@ -75,3 +75,20 @@ select replace('SQL tutorial', 't', 'r'); -- SQL rutorial
 -- translate each character of string with translated character
 select translate('[2+3]*{5-2}', '[]{}', '()()') -- (2+3)*(5-2)
 
+--------- * AGGREGATION * ------------
+-- count, sum, avg, max, min --
+select avg(s.age) from sailors s;
+select count(*) from sailors S;
+
+-- group by and having --
+-- steps execution of below code
+
+--3) select [distinct] select-list
+--1) from from-list
+--2) where qualification
+--4) group by grouping-list
+--5) having group-qualification
+
+select S.rating, MIN(S.age)
+from sailors S
+group by S.rating;
