@@ -52,3 +52,11 @@ select e.ename, d.loc
 where e.deptno = 10
 
 ---- Use the JOIN clause if you prefer to have the join logic in the FROM clause rather than the WHERE clause
+
+
+-- JOINING multiple tables
+select *
+from (Students S join Friends F using(ID)
+     join Packages P1 on P1.ID = S.ID
+     join Packages P2 on P2.ID = F.Friend_ID
+);
